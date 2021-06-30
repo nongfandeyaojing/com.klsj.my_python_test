@@ -1,0 +1,1362 @@
+,id,tb_name,tb_size,tb_comment,last_partition,tbp_recently_count,tbp_recently_size,tb_schema
+0,1,adm_hk_dp_api,322392,海口大屏api网关指标表,dt='20210531',8,1888,"odps.Schema {
+  biz_date                  string      
+  index_id                  string      
+  index_value               string      
+  index_comment             string      
+  update_type               string      
+  stat_time                 string      
+  create_time               string      
+}
+Partitions {
+  dt                        string      # 分区日期
+}
+"
+1,2,api_group_app,211409768,API网关大表,pt='20210606',2766,958240,"odps.Schema {
+  uuid                                            string          # 系统生成uuid，全局唯一
+  api_uid                                         string          # 系统生成uuid，api全局唯一
+  api_name                                        string          # API name，用户可以调整？
+  api_description                                 string          # API描述
+  api_gmt_create                                  datetime        # api创建时间
+  api_gmt_modified                                datetime        # api变更时间
+  api_is_removed                                  bigint          # 数据是否有效
+  api_visibility                                  string          # API 可见性
+  group_id                                        string          # namespace名称，系统自动生成
+  group_name                                      string          # namespace展示名称，用户可以修改
+  group_description                               string          # namespace描述
+  group_gmt_create                                datetime        # 创建时间
+  group_gmt_modified                              datetime        # 修改时间
+  group_is_removed                                bigint          # 业务是否删除
+  api_app_gmt_create                              datetime        # create
+  api_app_gmt_modified                            datetime        # modified
+  api_app_is_removed                              bigint          # remove
+  api_app_description                             string          # 描述信息
+  app_id                                          bigint          # app的唯一标识
+  app_name                                        string          # app名称
+  app_description                                 string          # 描述信息
+  app_gmt_create                                  datetime        # 创建时间
+  app_gmt_modified                                datetime        # 修改时间
+  app_is_removed                                  bigint          # 是否已删除
+  display_name                                    string          # 展现名
+  api_display_status                              string          # 状态
+  api_display_gmt_create                          datetime        # *
+  api_display_gmt_modified                        datetime        # *
+  name                                            string          # api名称
+  data1                                           string          # 内含前端地址
+  data2                                           string          # 内含后端地址
+}
+Partitions {
+  pt                                              string          # YYYYMMDD
+}
+"
+2,3,api_group_app_extend,64133736,api网关大表扩展表,pt='20210606',2780,352296,"odps.Schema {
+  uuid                                                    string          # 系统生成uuid，全局唯一
+  api_uid                                                 string          # 系统生成uuid，api全局唯一
+  api_name                                                string          # api name，用户可以调整？
+  api_description                                         string          # api描述
+  api_gmt_create                                          datetime        # api创建时间
+  api_gmt_modified                                        datetime        # api变更时间
+  api_is_removed                                          bigint          # 数据是否有效
+  api_visibility                                          string          # api 可见性
+  group_id                                                string          # namespace名称，系统自动生成
+  group_name                                              string          # namespace展示名称，用户可以修改
+  group_description                                       string          # namespace描述
+  group_gmt_create                                        datetime        # 创建时间
+  group_gmt_modified                                      datetime        # 修改时间
+  group_is_removed                                        bigint          # 业务是否删除
+  api_app_gmt_create                                      datetime        # create
+  api_app_gmt_modified                                    datetime        # modified
+  api_app_is_removed                                      bigint          # remove
+  api_app_description                                     string          # 描述信息
+  app_id                                                  bigint          # app的唯一标识
+  app_name                                                string          # app名称
+  app_description                                         string          # 描述信息
+  app_gmt_create                                          datetime        # 创建时间
+  app_gmt_modified                                        datetime        # 修改时间
+  app_is_removed                                          bigint          # 是否已删除
+  display_name                                            string          # 展现名
+  api_display_status                                      string          # 状态
+  api_display_gmt_create                                  datetime        # *
+  api_display_gmt_modified                                datetime        # *
+  name                                                    string          # api名称
+  interface_ds_department                                 string          # 数据来源部门
+  interface_ds_level                                      string          # 数据来源所属层级
+  interface_ds_system                                     string          # 数据来源系统
+  interface_ds_counterpart                                string          # 数据来源对接人
+  interface_ds_group                                      string          # 数据来源对接群
+  interface_app_department                                string          # 授权方部门
+  interface_app_system                                    string          # 授权方应用
+  interface_app_group                                     string          # 授权方对接人（开发）
+  interface_app_counter                                   string          # 授权对接群
+  is_generate                                             string          # 是否生成
+  self_built_floor                                        string          # 自建层
+  data_service_name                                       string          # 数据服务_数据源名称
+  data_service_type                                       string          # 数据服务_数据源类型
+  ds_rds_name                                             string          # 数据源rds实例名称
+  db_name                                                 string          # 数据库名称
+  ds_user_name                                            string          # 数据源用户名称
+  ds_table_name                                           string          # 数据源表名
+  ds_description                                          string          # 数据源描述
+  link1                                                   string          # 链路1
+  link2                                                   string          # 链路2
+  link3                                                   string          # 链路3
+  link4                                                   string          # 链路4
+  link5                                                   string          # 链路5（涉及数据源）
+  record_ct                                               datetime        # 记录创建时间
+  record_mt                                               datetime        # 记录修改时间
+  current_recorder                                        string          # 当前记录人员
+  interface_creator                                       string          # 接口创建人员
+  interface_maintenance_person                            string          # 接口维护人员
+  interface_doc                                           string          # 接口文档
+  remark1                                                 string          # 备注
+  remark2                                                 string          # 备用字段1
+  remark3                                                 string          # 备用字段2
+  remark4                                                 string          # 备用字段3
+  interface_provide_gmt_create                            string          # 接口提供时间
+  interface_provider_company                              string          # 接口提供方公司
+  front_address                                           string          # 前端地址
+  backend_address                                         string          # 后端地址
+  interface_authorizer                                    string          # 接口授权人
+  interface_debug_personnel                               string          # 接口联调人员
+  interface_debug_gmt_create                              string          # 联调开始时间
+  interface_debug_gmt_end                                 string          # 联调结束时间
+  interface_user_company                                  string          # 接口使用方公司
+}
+Partitions {
+  pt                                                      string          # yyyymmdd
+}
+"
+3,4,api_log,0,,pt='20210606',0,0,"odps.Schema {
+  id                        bigint          # PK
+  opt                       bigint          # *
+  description               string          # 描述
+  operator_id               string          # 创建用户
+  api_namespace             string          # api命名空间
+  api_name                  string          # api名称
+  api_version               bigint          # api版本
+  api_version2              bigint          # api版本2
+  gmt_modified              datetime        # *
+  gmt_create                datetime        # *
+}
+Partitions {
+  pt                        string          
+}
+"
+4,5,api_namespace,900760,,pt='20210606',48,3824,"odps.Schema {
+  id                      bigint          # PK
+  namespace               string          # 命名空间名称
+  version                 bigint          # 版本
+  description             string          # 描述
+  creator_id              string          # 创建用户id
+  gmt_modified            datetime        # 变更时间
+  gmt_create              datetime        # 创建时间
+  meta                    string          # 元数据信息，json格式存储
+  status                  string          # namespace状态:enable/disable
+}
+Partitions {
+  pt                      string          
+}
+"
+5,6,api_registry,0,,pt='20210606',0,0,"odps.Schema {
+  namespace                               string          # 命名空间名称
+  name                                    string          # api名称
+  version                                 bigint          # 版本号使用无符号整数标记，从1开始，每次加1
+  description                             string          # api描述
+  request_cfg                             string          # 请求配置
+  invoke_cfg                              string          # 调用配置
+  url                                     string          # 服务url
+  invoke_inteface                         string          # 调用接口
+  invoke_method                           string          # 调用方法
+  invoke_param                            string          # 调用参数
+  invoke_result                           string          # 调用结果
+  status                                  bigint          # api当前状态
+  acl                                     string          # 访问控制列表
+  need_access_key                         bigint          # api是否需要access_key, 0表示不需要，1表示需要
+  need_signature                          bigint          # api是否需要数字签名，0表示不需要，1表示需要
+  need_user_authentica                    bigint          # 是否需要用户认证
+  user_authenticated_d                    string          # 用户信任的域
+  need_result_signatur                    bigint          # 返回的结果是否需要签名
+  can_parallel                            bigint          # api能否并发执行，0表示不需要，1表示需要
+  result_cache                            bigint          # 调用结果缓存时间(秒)
+  timeout                                 bigint          # api调用超时时间, 毫秒
+  creator_id                              string          # 创建用户
+  gmt_modified                            datetime        # 修改时间
+  gmt_create                              datetime        # 创建时间
+  id                                      bigint          # PK
+  time_stamp                              bigint          # 时间戳
+  need_time_stamp                         bigint          # 是否需要时间戳
+  data_level                              bigint          # 数据权限
+  privacy_level                           bigint          # 隐私等级
+  plugin_cfg                              string          # 插件配置
+  frequency_limit                         bigint          # 调用频率
+  parallel_limit                          bigint          # 并发数
+  error_retriable                         string          # 调用出错后是否允许重试
+  resource_scopes                         string          # 资源控制范围
+}
+Partitions {
+  pt                                      string          
+}
+"
+6,7,api_rule,0,,pt='20210606',0,0,"odps.Schema {
+  id                            bigint          # PK
+  gmt_create                    datetime        # *
+  api_namespace                 string          # 规则关联的API名字空间
+  api_name                      string          # api名称
+  api_version                   bigint          # api版本
+  template_name                 string          # 模板名称
+  template_params               string          # 模板参数
+  condition_info                string          # IF条件
+  then_action                   string          # then分支执行动作
+  else_action                   string          # else分支执行动作
+  order_index                   bigint          # 规则执行顺序
+  status                        string          # 状态
+  creator_id                    string          # 创建用户
+  description                   string          # *
+  gmt_modified                  datetime        # *
+}
+Partitions {
+  pt                            string          
+}
+"
+7,8,ca_access_domain,541408,,pt='20210606',48,2496,"odps.Schema {
+  id                      bigint          # 主键
+  domain_name             string          # 域名名称
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+}
+Partitions {
+  pt                      string          
+}
+"
+8,9,ca_access_domain_dns,653280,,pt='20210606',34,2688,"odps.Schema {
+  id                        bigint          # 主键
+  domain_name               string          # 域名名称
+  ip                        string          # 该域名绑定的DNS IP
+  status                    string          # 该域名的DNS绑定状态
+  dns_record_id             bigint          # AliDNS记录ID
+  type                      string          # DNS记录类型
+  gmt_create                datetime        # 创建时间
+  gmt_modified              datetime        # 修改时间
+}
+Partitions {
+  pt                        string          
+}
+"
+9,10,ca_access_ngx_group,271216,,pt='20210606',3,1072,"odps.Schema {
+  id                    bigint          # 主键
+  group_name            string          # nginx的 group信息
+  group_type            string          # http or https
+  port                  bigint          # port
+  gmt_created           datetime        # 创建时间
+}
+Partitions {
+  pt                    string          
+}
+"
+10,11,ca_access_ngx_group_server_backup,0,,pt='20210606',0,0,"odps.Schema {
+  id                    bigint          # 主键
+  group_id              bigint          # nginx group id
+  server_id             bigint          # nginx server id
+  gmt_created           datetime        # 创建时间
+}
+Partitions {
+  pt                    string          
+}
+"
+11,12,ca_access_ngx_instance,398728,,pt='20210606',6,1576,"odps.Schema {
+  id                      bigint          # 自增id
+  ip                      string          # ip
+  host_name               string          # host_name
+  intranet_ip             string          # intranet_ip
+  control_port            bigint          # control_port
+  group_id                bigint          # group_id
+  status                  string          # status
+  gmt_created             datetime        # gmt_created
+}
+Partitions {
+  pt                      string          
+}
+"
+12,13,ca_access_ngx_server_backup,0,,pt='20210606',0,0,"odps.Schema {
+  id                            bigint          # 自增id
+  server_name                   string          # server_name
+  port                          bigint          # port
+  is_https                      bigint          # is_https
+  server_type                   string          # server_type
+  has_extend_prop               bigint          # has_extend_prop
+  gmt_created                   datetime        # gmt_created
+}
+Partitions {
+  pt                            string          
+}
+"
+13,14,ca_access_vip,305624,,pt='20210606',1,1208,"odps.Schema {
+  id                      bigint          # 主键
+  vip                     string          # 公网vip
+  group_id                bigint          # vip分组id
+  status                  string          # vip状态(NORMAL,DEFENSE,BLACKHOLE,PREWHITE,DISABLE)
+  app_num                 bigint          # vip上app的数量
+  gmt_create              datetime        # gmt_create
+  gmt_modified            datetime        # gmt_modified
+}
+Partitions {
+  pt                      string          
+}
+"
+14,15,ca_access_vip_app,680904,,pt='20210606',50,2824,"odps.Schema {
+  id                      bigint          # id
+  vip                     string          # vip
+  app_uid                 string          # 应用唯一标志
+  type                    string          # vip和app的绑定类型(FRONT_BOUND, DEFENSE_BOUND)
+  gmt_create              datetime        # gmt_create
+  gmt_modified            datetime        # gmt_modified
+}
+Partitions {
+  pt                      string          
+}
+"
+15,16,ca_access_vip_app_whitelist,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # id
+  app_uid                 string          # app标识
+  status                  string          # 预留字段
+  gmt_create              datetime        # gmt_create
+  gmt_modified            datetime        # gmt_modified
+}
+Partitions {
+  pt                      string          
+}
+"
+16,17,ca_access_vip_group,404800,,pt='20210606',5,1600,"odps.Schema {
+  id                          bigint          # id
+  name                        string          # vip分组名称
+  type                        string          # vip分组类型（FRONT, DEFENSE）
+  region                      string          # vip分组所在域
+  defense_status              string          # 清洗段状态(USED, IDLE)
+  gmt_create                  datetime        # 创建时间
+  gmt_modified                datetime        # 修改时间
+}
+Partitions {
+  pt                          string          
+}
+"
+17,18,ca_api,22925672,,pt='20210606',2184,93872,"odps.Schema {
+  id                      bigint          # id
+  api_name                string          # API name，用户可以调整？
+  description             string          # API描述
+  status                  string          # API状态，目前确认没有使用
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 变更时间
+  is_removed              bigint          # 数据是否有效
+  api_uid                 string          # 系统生成uuid，全局唯一
+  visibility              string          # API 可见性
+  group_id                string          # 分组名称，唯一键
+  region_id               string          # regionName
+  extend                  string          # 扩展字段
+}
+Partitions {
+  pt                      string          
+}
+"
+18,19,ca_api_deployment,19714680,,pt='20210606',2535,81840,"odps.Schema {
+  id                        bigint          # 主键
+  gmt_create                datetime        # 创建时间
+  gmt_modified              datetime        # 修改时间
+  api_uid                   string          # api id
+  group_id                  string          # 分组名称
+  stage_id                  string          # stage名称
+  status                    string          # 对应版本的API的运行状态，枚举值：on，off
+  is_removed                bigint          # 记录是否有效
+  description               string          # 发布描述
+  api_meta_name             string          # 对应ocean api meta 表name字段
+  version                   string          # 发布版本
+  region_id                 string          # regionId
+}
+Partitions {
+  pt                        string          
+}
+"
+19,20,ca_api_extend,18430792,api信息扩展表,pt='20210606',2184,212944,"odps.Schema {
+  api_uid                                                 string          # 系统生成uuid，全局唯一
+  id                                                      bigint          # id
+  api_name                                                string          # api name，用户可以调整？
+  description                                             string          # api描述
+  status                                                  string          # api状态，目前确认没有使用
+  gmt_create                                              datetime        # 创建时间
+  gmt_modified                                            datetime        # 变更时间
+  is_removed                                              bigint          # 数据是否有效
+  visibility                                              string          # api 可见性
+  group_id                                                string          # 分组名称，唯一键
+  region_id                                               string          # regionname
+  extend                                                  string          # 扩展字段
+  interface_ds_department                                 string          # 数据来源部门
+  interface_ds_level                                      string          # 数据来源所属层级
+  interface_ds_system                                     string          # 数据来源系统
+  interface_ds_counterpart                                string          # 数据来源对接人
+  interface_ds_group                                      string          # 数据来源对接群
+  is_generate                                             string          # 是否生成
+  self_built_floor                                        string          # 自建层
+  data_service_name                                       string          # 数据服务_数据源名称
+  data_service_type                                       string          # 数据服务_数据源类型
+  ds_rds_name                                             string          # 数据源rds实例名称
+  db_name                                                 string          # 数据库名称
+  ds_user_name                                            string          # 数据源用户名称
+  ds_table_name                                           string          # 数据源表名
+  ds_description                                          string          # 数据源描述
+  link1                                                   string          # 链路1
+  link2                                                   string          # 链路2
+  link3                                                   string          # 链路3
+  link4                                                   string          # 链路4
+  link5                                                   string          # 链路5（涉及数据源）
+  interface_provide_gmt_create                            datetime        # 接口提供时间
+  interface_provider_company                              string          # 接口提供方公司
+  front_address                                           string          # 前端地址
+  backend_address                                         string          # 后端地址
+  interface_doc                                           string          # 接口文档
+  current_recorder                                        string          # 当前记录人员
+  interface_creator                                       string          # 平台接口创建人员
+  interface_maintenance_person                            string          # 平台接口维护人员
+  record_ct                                               datetime        # 记录创建时间
+  record_mt                                               datetime        # 记录修改时间
+  remark1                                                 string          # 备注
+  remark2                                                 string          # 备用字段1
+  remark3                                                 string          # 备用字段2
+  remark4                                                 string          # 备用字段3
+}
+Partitions {
+  pt                                                      string          
+}
+"
+20,21,ca_api_meta_history,142051184,,pt='20210606',2535,598768,"odps.Schema {
+  id                          bigint          # PK
+  gmt_create                  datetime        # *
+  gmt_modified                datetime        # *
+  namespace                   string          # 命名空间
+  name                        string          # api名称
+  version                     bigint          # api版本
+  display_name                string          # 展现名
+  description                 string          # 描述
+  status                      string          # 状态
+  data1                       string          # *
+  data2                       string          # *
+  data3                       string          # *
+  data4                       string          # *
+  note                        string          # 备注
+  category_key                string          # 类目
+  data5                       string          # *
+  data6                       string          # *
+  data7                       string          # *
+  data8                       string          # *
+  data9                       string          # *
+  order_index                 bigint          # 排序
+  editor                      string          # 最近编辑人
+  requirement_id              bigint          # 绑定的需求
+}
+Partitions {
+  pt                          string          
+}
+"
+21,22,ca_api_policy_relation,502952,,pt='20210606',9,2032,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  api_uid                 string          # api的唯一键
+  policy_id               string          # 流控策略的唯一主键
+  stage_id                string          # stage唯一键
+  is_removed              bigint          # 是否已删除
+  policy_type             bigint          # 1:流控 2：秘钥
+  region_id               string          # regionId
+}
+Partitions {
+  pt                      string          
+}
+"
+22,23,ca_api_sign_secret,471592,,pt='20210606',2,1864,"odps.Schema {
+  id                              bigint          # 主键
+  gmt_create                      datetime        # 创建时间
+  gmt_modified                    datetime        # 修改时间
+  sign_secret_id                  string          # 系统自动生成，唯一键
+  sign_secret_name                string          # 展示名称
+  secret_key                      string          # 参与签名的secret key
+  secret_value                    string          # 参与签名的secret value
+  region_id                       string          # regionId
+  is_removed                      bigint          # 业务是否有效
+  user_id                         bigint          # 阿里云账号Id
+}
+Partitions {
+  pt                              string          
+}
+"
+23,24,ca_app,1356976,,pt='20210606',85,6136,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  app_id                  bigint          # app的唯一标识
+  app_name                string          # app名称
+  user_id                 bigint          # aliyun uid
+  is_removed              bigint          # 是否已删除
+  description             string          # 描述信息
+  source                  string          # 来源
+}
+Partitions {
+  pt                      string          
+}
+"
+24,25,ca_app_api_relation,11539432,,pt='20210606',2406,47144,"odps.Schema {
+  id                                      bigint          # id
+  app_id                                  bigint          # app
+  authorization_id                        string          # authorization
+  authorization_source                    string          # source
+  gmt_create                              datetime        # create
+  gmt_modified                            datetime        # modified
+  is_removed                              bigint          # remove
+  api_uid                                 string          # ca_api api_uid
+  stage_id                                string          # stageId，ca_stage唯一键
+  description                             string          # 描述信息
+  region_id                               string          # region_id
+}
+Partitions {
+  pt                                      string          
+}
+"
+25,26,ca_app_extend,2578696,api网关应用信息扩展表,pt='20210606',85,12744,"odps.Schema {
+  id                                  bigint          # 主键
+  gmt_create                          datetime        # 创建时间
+  gmt_modified                        datetime        # 修改时间
+  app_id                              bigint          # app的唯一标识
+  app_name                            string          # app名称
+  user_id                             bigint          # aliyun uid
+  is_removed                          bigint          # 是否已删除
+  description                         string          # 描述信息
+  source                              string          # 来源
+  application_unit                    string          # 应用单位
+  application_system                  string          # 应用系统
+  creator                             string          # 创建人
+  remarks1                            string          # 备注
+  remarks2                            string          # 备注
+  remarks3                            string          # 备注
+}
+Partitions {
+  pt                                  string          
+}
+"
+26,27,ca_app_security,2040944,,pt='20210606',85,9488,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  app_id                  bigint          # app的唯一标识
+  app_key                 string          # appkey
+  app_secret              string          # appsecret 加密后的
+  is_removed              bigint          # 是否已删除
+  app_code                string          # appcode加密后的
+}
+Partitions {
+  pt                      string          
+}
+"
+27,28,ca_black_list,0,,pt='20210606',0,0,"odps.Schema {
+  id                        bigint          # 主键
+  gmt_create                datetime        # 创建时间
+  gmt_modified              datetime        # 修改时间
+  user_id                   bigint          # 黑名单的所有者
+  type                      string          # 黑名单的类型：1:APP 2:IP
+  black_content             string          # 黑名单内容
+  region_id                 string          # regionId
+  is_removed                bigint          # 是否已被删除
+  description               string          # 描述
+}
+Partitions {
+  pt                        string          
+}
+"
+28,29,ca_consumer_open,0,,pt='20210606',0,0,"odps.Schema {
+  id                              bigint          # 主键
+  gmt_create                      datetime        # 创建时间
+  gmt_modified                    datetime        # 修改时间
+  consumer_user_id                bigint          # 调用方aliUid
+  group_id                        string          # namespace名称，系统自动生成
+  billing_type                    bigint          # 付费类型，0：预付费，1：后付费
+  status                          bigint          # 状态，0：放行，1：gateway计量，2：quto超出，限流，3：过期，限流，4：后付费欠费
+  invoke_times_max                bigint          # 最大调用次数
+  invoke_times_now                bigint          # 当前调用次数
+  gmt_expire                      datetime        # 过期时间
+  extend                          string          # 扩展信息
+  region_id                       string          # regionId
+}
+Partitions {
+  pt                              string          
+}
+"
+29,30,ca_group,1223088,,pt='20210606',50,5184,"odps.Schema {
+  id                          bigint          # id
+  group_id                    string          # namespace名称，系统自动生成
+  description                 string          # namespace描述
+  owner_user_id               bigint          # 创建者id
+  gmt_create                  datetime        # 创建时间
+  gmt_modified                datetime        # 修改时间
+  is_removed                  bigint          # 业务是否删除
+  region_id                   string          # regionId
+  group_name                  string          # namespace展示名称，用户可以修改
+  billing_status              bigint          # 用户是否欠费
+  illegal_status              bigint          # 服务是否非法
+  traffic_limit               bigint          # 分组级流控限制
+  auth_appcode                bigint          # 是否支持简单身份认证
+  exclude_apis                string          # 不计quota的API列表
+}
+Partitions {
+  pt                          string          
+}
+"
+30,31,ca_group_domain_relation,1008832,,pt='20210606',49,4544,"odps.Schema {
+  id                              bigint          # 主键
+  gmt_create                      datetime        # 创建时间
+  gmt_modified                    datetime        # 修改时间
+  group_id                        string          # 分组名称，groupId是ca_domain表的name字段。系统自动生成的分组唯一键
+  domain_name                     string          # 用户API绑定域名：内容包含自定义域名和系统生成的二级域名
+  domain_name_type                string          # 域名类型，包含：test，custom
+  region_id                       string          # regionId
+  is_removed                      bigint          # 是否有效
+  status                          string          # 绑定状态，取值：Binding，已经绑定；Unbound，未绑定
+  domain_status                   bigint          # 域名状态是否正常0:正常，1:异常
+  remark                          string          # 备注，一般存放异常信息
+}
+Partitions {
+  pt                              string          
+}
+"
+31,32,ca_group_extend,1191856,api网关分组信息扩展表,pt='20210606',50,5888,"odps.Schema {
+  id                        bigint          # id
+  group_id                  string          # namespace名称，系统自动生成
+  description               string          # namespace描述
+  owner_user_id             bigint          # 创建者id
+  gmt_create                datetime        # 创建时间
+  gmt_modified              datetime        # 修改时间
+  is_removed                bigint          # 业务是否删除
+  region_id                 string          # regionid
+  group_name                string          # namespace展示名称，用户可以修改
+  source_unit               string          # 来源单位
+  source_system             string          # 来源系统
+  creator                   string          # 创建人
+  remarks1                  string          # 备注
+  remarks2                  string          # 备注
+  remarks3                  string          # 备注
+}
+Partitions {
+  pt                        string          
+}
+"
+32,33,ca_ip_control,471592,,pt='20210606',2,1864,"odps.Schema {
+  id                            bigint          # 主键
+  gmt_create                    datetime        # 创建时间
+  gmt_modified                  datetime        # 修改时间
+  user_id                       bigint          # 用户ID
+  type                          string          # 访问控制类型：ALLOW，FORBIDDEN
+  ip_control_id                 string          # 唯一ID
+  ip_control_name               string          # 访问控制名称
+  description                   string          # 描述
+  is_removed                    bigint          # 是否删除
+  region_id                     string          # regionId
+}
+Partitions {
+  pt                            string          
+}
+"
+33,34,ca_ip_control_item,0,,pt='20210606',0,0,"odps.Schema {
+  id                          bigint          # 主键
+  gmt_create                  datetime        # 创建时间
+  gmt_modified                datetime        # 修改时间
+  ip_control_id               string          # ip control id
+  app_id                      string          # appId
+  ip                          string          # ip
+  policy_item_id              string          # 每条策略的id
+  policy_type                 string          # 访问控制下细分类型
+}
+Partitions {
+  pt                          string          
+}
+"
+34,35,ca_oms_log,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  content                 string          # 发送的data
+  status                  bigint          # 发送状态 0 初始状态 1成功 2失败
+  retry_times             bigint          # 重试次数
+  start_time              datetime        # 统计的开始时间
+  end_time                datetime        # 统计的结束时间
+  key_string              string          # userId_groupId
+  product_id              string          # 商品code
+  region_id               string          # regionId
+  is_removed              bigint          # 业务是否删除
+}
+Partitions {
+  pt                      string          
+}
+"
+35,36,ca_quota_log,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  token                   string          # 幂等token
+  region_id               string          # regionId
+  start_time              datetime        # 计量开始时间
+  end_time                datetime        # 计量结束时间
+  send_flag               bigint          # 发送状态 0初始 1 成功 2失败
+  content                 string          # 发送内容
+  retry_times             bigint          # 重试次数
+  is_removed              bigint          # 业务是否删除
+}
+Partitions {
+  pt                      string          
+}
+"
+36,37,ca_race_works,0,,pt='20210606',0,0,"odps.Schema {
+  id                                bigint          # 主键
+  gmt_create                        datetime        # 创建时间
+  gmt_modified                      datetime        # 修改时间
+  user_id                           bigint          # 参赛者用户Id
+  group_id                          string          # 分组id
+  commodity_id                      string          # 云市场商品id
+  logo_url                          string          # logo的url
+  work_name                         string          # 作品名称
+  short_description                 string          # 作品简介
+  keywords                          string          # 关键字
+  audit_status                      bigint          # 审核状态，0:审核中，1:通过 2:审核失败
+}
+Partitions {
+  pt                                string          
+}
+"
+37,38,ca_request,0,,pt='20210606',0,0,"odps.Schema {
+  id                              bigint          # 主键
+  gmt_create                      datetime        # 创建时间
+  gmt_modified                    datetime        # 修改时间
+  token                           string          # 请求唯一标示符
+  request_param                   string          # 请求参数
+  request_param_id                string          # 请求参数唯一标示符
+  status                          bigint          # 请求状态， 0:处理中，1:成功，2:失败
+  result_message                  string          # 返回信息
+}
+Partitions {
+  pt                              string          
+}
+"
+38,39,ca_request_log,0,,pt='20210606',0,0,"odps.Schema {
+  id                                        bigint          # 主键
+  gmt_create                                datetime        # 创建时间
+  gmt_modified                              datetime        # 修改时间
+  consumer_aliuid                           string          # 请求用户的aliUid
+  provider_aliuid                           string          # 提供者的aliuid
+  group_id                                  string          # 分组ID
+  total_requests                            bigint          # 总的请求次数
+  success_requests                          bigint          # 成功的请求次数
+  total_request_size                        bigint          # 总的请求大小 单位byte
+  success_request_size                      bigint          # 成功的请求大小 单位byte
+  total_response_size                       bigint          # 总的响应大小 单位byte
+  success_response_size                     bigint          # 成功的响应大小  单位byte
+  start_time                                datetime        # 统计的开始时间
+  end_time                                  datetime        # 统计的结束时间
+  last_request_id                           string          # 统计最后一条的requestId
+  region_id                                 string          # regionId
+  payer_id                                  string          # 支付者的aliUid
+  is_removed                                bigint          # 是否删除 0:未删除 1:已删除
+  quota_requests                            bigint          # 计quota的次数
+  quota_request_size                        bigint          # 计quota的请求大小
+  quota_response_size                       bigint          # 计quota的响应大小
+}
+Partitions {
+  pt                                        string          
+}
+"
+39,40,ca_service_meta_history,27973328,,pt='20210606',2535,116968,"odps.Schema {
+  id                      bigint          # PK
+  gmt_create              datetime        # *
+  gmt_modified            datetime        # *
+  namespace               string          # 命名空间
+  name                    string          # 服务名称
+  display_name            string          # 展现服务名称
+  type                    string          # 服务类型：dubbo，http等
+  description             string          # 描述
+  status                  string          # 状态
+  data1                   string          # 数据
+  data2                   string          # 数据
+  data3                   string          # 数据
+  data4                   string          # 数据
+  note                    string          # 数据
+  data5                   string          # 数据
+  data6                   string          # 数据
+  data7                   string          # 数据
+  data8                   string          # 数据
+  data9                   string          # 数据
+  order_index             bigint          # *
+  editor                  string          # 最近编辑人
+}
+Partitions {
+  pt                      string          
+}
+"
+40,41,ca_ssl_certificate,0,,pt='20210606',0,0,"odps.Schema {
+  id                          bigint          # id
+  cert_uid                    string          # 证书ID
+  user_id                     string          # user_id
+  api_group_name              string          # api_group_name
+  region_name                 string          # region_name
+  domain_name                 string          # domain_name
+  cert_name                   string          # cert_name
+  cert_content                string          # cert_content
+  key_content                 string          # key_content
+  description                 string          # description
+  gmt_create                  datetime        # gmt_create
+  gmt_modified                datetime        # gmt_modified
+  is_removed                  bigint          # is_removed
+}
+Partitions {
+  pt                          string          
+}
+"
+41,42,ca_stage,1723840,,pt='20210606',150,7144,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  group_id                string          # ca_domain name字段，一个stage必须且只能在一个分组下面
+  stage_id                string          # 系统生成唯一编号，用于内部关联
+  is_removed              bigint          # 记录是否有效，0代表无效，1代表有效
+  description             string          # stage描述
+  stage_name              string          # stage名称，API服务路径参数，如：/display_name/resource
+  data1                   string          # stage data1
+  data2                   string          # stage data2
+  data3                   string          # stage data3
+  data4                   string          # stage data4
+  data5                   string          # stage data5
+  data6                   string          # stage data6
+  data7                   string          # stage data7
+  data8                   string          # stage data8
+  data9                   string          # stage data9
+}
+Partitions {
+  pt                      string          
+}
+"
+42,43,ca_stastic_config,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  config_key              string          # 配置的key
+  config_value            string          # 配置的value
+  is_removed              bigint          # 是否已作废
+}
+Partitions {
+  pt                      string          
+}
+"
+43,44,ca_tag,0,,pt='20210606',0,0,"odps.Schema {
+  id                            bigint          # PK
+  tag_id                        string          # tag编号，系统自动生成
+  tag_name                      string          # tag名称
+  tag_description               string          # tag描述
+  parent_id                     string          # 父节点编号
+  tag_level                     bigint          # tag层级，最多允许50级
+  owner_user_id                 bigint          # 创建者id
+  region_id                     string          # regionId
+  is_removed                    bigint          # 是否删除
+  gmt_create                    datetime        # 创建时间
+  gmt_modified                  datetime        # 变更时间
+  parent_path                   string          # 父节点路径
+}
+Partitions {
+  pt                            string          
+}
+"
+44,45,ca_tag_api_relation,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # PK
+  tag_id                  string          # tag编号
+  api_id                  string          # api编号
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 变更时间
+}
+Partitions {
+  pt                      string          
+}
+"
+45,46,ca_traffic_control,544728,,pt='20210606',5,2216,"odps.Schema {
+  id                          bigint          # 主键
+  gmt_create                  datetime        # 创建时间
+  gmt_modified                datetime        # 修改时间
+  policy_name                 string          # 流控策略名称
+  description                 string          # 描述
+  control_policy              string          # 流控策略
+  user_id                     bigint          # 流控策略的拥有者
+  region_id                   string          # regionId
+  policy_id                   string          # 唯一Id
+  is_removed                  bigint          # 是否已删除
+}
+Partitions {
+  pt                          string          
+}
+"
+46,47,ca_vpc_access,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  user_id                 bigint          # vpc所属的用户Id
+  vpc_id                  string          # vpc id
+  instance_id             string          # vpc instance id
+  port                    bigint          # 端口号
+  name                    string          # 展示名称
+  status                  bigint          # 状态：0，有效；9，无效
+  region_id               string          # regionId
+  extend                  string          # 扩展信息
+  app_id                  string          # gateway在vpc反向调用中对应的appId
+}
+Partitions {
+  pt                      string          
+}
+"
+47,48,ocean_api_category,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # PK
+  category_key            string          # 类目key
+  gmt_create              datetime        # *
+  gmt_modified            datetime        # *
+  display_name            string          # 展现名称
+  description             string          # 描述
+  note                    string          # 备注
+  namespace               string          # 属于命名空间
+  status                  string          # 状态
+  order_index             bigint          # *
+  meta                    string          # 其它配置信息
+  creator_id              string          # creator_id
+}
+Partitions {
+  pt                      string          
+}
+"
+48,49,ocean_api_message_relation,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # PK
+  gmt_create              datetime        # *
+  gmt_modified            datetime        # *
+  namespace               string          # 命名空间
+  api_name                string          # api名称
+  api_version             bigint          # api版本
+  message_name            string          # 消息名
+}
+Partitions {
+  pt                      string          
+}
+"
+49,50,ocean_api_meta,123982384,,pt='20210606',2119,515912,"odps.Schema {
+  id                          bigint          # PK
+  gmt_create                  datetime        # *
+  gmt_modified                datetime        # *
+  namespace                   string          # 命名空间
+  name                        string          # api名称
+  version                     bigint          # api版本
+  display_name                string          # 展现名
+  description                 string          # 描述
+  status                      string          # 状态
+  data1                       string          # *
+  data2                       string          # *
+  data3                       string          # *
+  data4                       string          # *
+  note                        string          # 备注
+  category_key                string          # 类目
+  data5                       string          # *
+  data6                       string          # *
+  data7                       string          # *
+  data8                       string          # *
+  data9                       string          # *
+  order_index                 bigint          # 排序
+  editor                      string          # 最近编辑人
+  requirement_id              bigint          # 绑定的需求
+}
+Partitions {
+  pt                          string          
+}
+"
+50,51,ocean_api_meta_draft,126646784,,pt='20210606',2184,531216,"odps.Schema {
+  id                                            bigint          # PK
+  gmt_create                                    datetime        # *
+  gmt_modified                                  datetime        # *
+  namespace                                     string          # 命名空间
+  name                                          string          # 名称
+  version                                       bigint          # 版本
+  display_name                                  string          # 展现名
+  description                                   string          # 描述
+  status                                        string          # 状态
+  data1                                         string          # *
+  data2                                         string          # *
+  data3                                         string          # *
+  data4                                         string          # *
+  note                                          string          # 备注
+  category_key                                  string          # 类目
+  data5                                         string          # *
+  data6                                         string          # *
+  data7                                         string          # *
+  data8                                         string          # *
+  data9                                         string          # *
+  order_index                                   bigint          # 排序
+  process_status                                string          # 审核状态
+  draft_version                                 bigint          # 草表版本
+  is_latest_draft_version                       string          # 是否草表中最新版本
+  editor                                        string          # 最近编辑人
+  requirement_id                                bigint          # 绑定的需求
+}
+Partitions {
+  pt                                            string          
+}
+"
+51,52,ocean_api_requirement_relation,0,,pt='20210606',0,0,"odps.Schema {
+  id                          bigint          # id
+  gmt_create                  datetime        # gmt_create
+  gmt_modified                datetime        # gmt_modified
+  namespace                   string          # namespace
+  name                        string          # name
+  version                     bigint          # version
+  requirement_id              bigint          # requirement_id
+  status                      string          # status
+  description                 string          # description
+  category_key                string          # category_key
+  display_name                string          # display_name
+  pd                          string          # pd
+  developers                  string          # developers
+}
+Partitions {
+  pt                          string          
+}
+"
+52,53,ocean_audit_meta,0,,pt='20210606',0,0,"odps.Schema {
+  id                        bigint          # PK
+  gmt_create                datetime        # *
+  gmt_modified              datetime        # *
+  reviewer_name             string          # 审核人
+  review_result             string          # 审核结果
+  type                      string          # 类型
+  namespace                 string          # api命名空间
+  name                      string          # api名称
+  version                   bigint          # api版本
+  draft_version             bigint          # api草表版本
+}
+Partitions {
+  pt                        string          
+}
+"
+53,54,ocean_auth_resource_scope,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # PK
+  gmt_create              datetime        # *
+  gmt_modified            datetime        # *
+  name                    string          # 业务唯一标识
+  display_name            string          # 显示名称
+  description             string          # 描述
+  owner_scope             string          # resourceowner所属范围，如：ax, cbu, icbu
+  status                  string          # 状态: enable,disable
+}
+Partitions {
+  pt                      string          
+}
+"
+54,55,ocean_cert,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  alias                   string          # 证书别名
+  status                  string          # 证书状态，分为online和offline
+  file                    string          # 证书文件
+  data_odps               string          # 扩展信息
+  creator                 string          # 创建人
+  is_root                 string          # 是否是根证书。0不是，1是
+  higher_cert             string          # 上级证书别名
+  issuer                  string          # 颁发者
+  owner                   string          # 拥有者
+  comment_odps            string          # 备用字段
+  start_time              datetime        # 证书有效开始时间
+  end_time                datetime        # 证书有效截止时间
+  description             string          # 证书描述信息
+  content_type            string          # 内容的类型，如受信证书，私钥等，老数据全部为受信证书
+}
+Partitions {
+  pt                      string          
+}
+"
+55,56,ocean_cert_app_relation,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  appkey                  bigint          # 证书关联的appkey
+  alias                   string          # 证书别名
+}
+Partitions {
+  pt                      string          
+}
+"
+56,57,ocean_data_authority,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # id
+  gmt_create              datetime        # gmt_create
+  gmt_modified            datetime        # gmt_modified
+  namespace               string          # namespace
+  value                   string          # value
+  version                 bigint          # version
+  data_type               string          # data_type
+  user_name               string          # user_name
+  status                  string          # status
+  role                    string          # role
+  data_odps               string          # data
+}
+Partitions {
+  pt                      string          
+}
+"
+57,58,ocean_message_meta,0,,pt='20210606',0,0,"odps.Schema {
+  id                                bigint          # PK
+  gmt_create                        datetime        # *
+  gmt_modified                      datetime        # *
+  namespace                         string          # domain属于namespace
+  name                              string          # domain名称
+  category_key                      string          # 属于类目
+  owner_api_name                    string          # 属于api名
+  owner_api_version                 bigint          # 属于api版本
+  display_name                      string          # 展现名
+  description                       string          # 描述
+  note                              string          # 备注
+  status                            string          # 状态
+  data1                             string          # *
+  data2                             string          # *
+  data3                             string          # *
+  data4                             string          # *
+  data5                             string          # *
+  data6                             string          # *
+  data7                             string          # *
+  data8                             string          # *
+  data9                             string          # *
+  order_index                       bigint          # 排序
+  type                              string          # 类型
+  parent                            string          # 父domain
+  editor                            string          # 最近编辑人
+}
+Partitions {
+  pt                                string          
+}
+"
+58,59,ocean_message_meta_draft,0,,pt='20210606',0,0,"odps.Schema {
+  id                                            bigint          # PK
+  gmt_create                                    datetime        # *
+  gmt_modified                                  datetime        # *
+  namespace                                     string          # 命名空间
+  name                                          string          # 名称
+  category_key                                  string          # 属于类目
+  owner_api_name                                string          # 属于api名称
+  owner_api_version                             bigint          # 属于api版本
+  display_name                                  string          # 展现名
+  description                                   string          # 描述
+  note                                          string          # 备注
+  status                                        string          # 状态
+  data1                                         string          # *
+  data2                                         string          # *
+  data3                                         string          # *
+  data4                                         string          # *
+  data5                                         string          # *
+  data6                                         string          # *
+  data7                                         string          # *
+  data8                                         string          # *
+  data9                                         string          # *
+  order_index                                   bigint          # 排序
+  process_status                                string          # 审核状态
+  type                                          string          # 类型
+  parent                                        string          # 父domain
+  draft_version                                 bigint          # 草表版本
+  is_latest_draft_version                       string          # 是否为最新草表版本
+  editor                                        string          # 最近编辑人
+}
+Partitions {
+  pt                                            string          
+}
+"
+59,60,ocean_plugin_config,0,,pt='20210606',0,0,"odps.Schema {
+  id                              bigint          # 主键
+  gmt_create                      datetime        # 创建时间
+  gmt_modified                    datetime        # 修改时间
+  type                            string          # 描述存储的数据类型
+  relate_template                 string          # 关联的模板id
+  relate_namespace                string          # 关联命名空间
+  relate_name                     string          # 关联名称
+  relate_version                  bigint          # 关联版本
+  data_odps                       string          # 插件配置集合
+  status                          string          # 状态
+  commet                          string          # 备注
+  editor                          string          # 编辑人
+}
+Partitions {
+  pt                              string          
+}
+"
+60,61,ocean_plugin_config_draft,0,,pt='20210606',0,0,"odps.Schema {
+  id                                      bigint          # 主键
+  gmt_create                              datetime        # 创建时间
+  gmt_modified                            datetime        # 修改时间
+  type                                    string          # 描述存储的数据类型
+  relate_template                         string          # 关联的模板id
+  relate_namespace                        string          # 关联命名空间
+  relate_name                             string          # 关联名称
+  relate_version                          bigint          # 关联版本
+  relate_draft_version                    bigint          # 关联草表版本
+  data_odps                               string          # 插件配置集合
+  status                                  string          # 状态
+  commet                                  string          # 备注
+  editor                                  string          # 编辑者
+}
+Partitions {
+  pt                                      string          
+}
+"
+61,62,ocean_plugin_template,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # 主键
+  gmt_create              datetime        # 创建时间
+  gmt_modified            datetime        # 修改时间
+  name                    string          # 模板名称
+  description             string          # 模板描述
+  data_odps               string          # 插件配置集合
+  status                  string          # 状态
+  commet                  string          # 备注
+  editor                  string          # 编辑人
+  type                    string          # 模板类型
+  region_id               string          # 区域id
+}
+Partitions {
+  pt                      string          
+}
+"
+62,63,ocean_requirement_table,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # id
+  gmt_create              datetime        # gmt_create
+  gmt_modified            datetime        # gmt_modified
+  name                    string          # name
+  description             string          # description
+  expect_time             datetime        # expect_time
+  pd                      string          # pd
+  status                  string          # status
+  data_odps               string          # data
+  creator                 string          # creator
+}
+Partitions {
+  pt                      string          
+}
+"
+63,64,ocean_service_meta,33255880,,pt='20210606',4303,138432,"odps.Schema {
+  id                      bigint          # PK
+  gmt_create              datetime        # *
+  gmt_modified            datetime        # *
+  namespace               string          # 命名空间
+  name                    string          # 服务名称
+  display_name            string          # 展现服务名称
+  type                    string          # 服务类型：dubbo，http等
+  description             string          # 描述
+  status                  string          # 状态
+  data1                   string          # 数据
+  data2                   string          # 数据
+  data3                   string          # 数据
+  data4                   string          # 数据
+  note                    string          # 数据
+  data5                   string          # 数据
+  data6                   string          # 数据
+  data7                   string          # 数据
+  data8                   string          # 数据
+  data9                   string          # 数据
+  order_index             bigint          # *
+  editor                  string          # 最近编辑人
+}
+Partitions {
+  pt                      string          
+}
+"
+64,65,ocean_svn_data,0,,pt='20210606',0,0,"odps.Schema {
+  id                          bigint          # 主键
+  gmt_create                  datetime        # 创建时间
+  gmt_modified                datetime        # 修改时间
+  type                        string          # 数据类型，包括api,domain,service,app等
+  namespace                   string          # 命名空间，可空
+  keyword                     string          # 关键字，api，domain，service是name，appkey是key等等
+  version                     bigint          # 版本号，只有API，Domain等用到
+  is_primary                  string          # 是否是主表对应的数据，0表示不是，1表示是。默认0
+  revision                    bigint          # SVN版本号(revision)，必填
+  editor                      string          # 编辑人
+  auto                        string          # 表示是自己手动上传到SVN的，还是在API工厂操作时自动上传到SVN的。1表示自动，0表示手动，默认0
+  data_odps                   string          # 数据，备用字段
+  message                     string          # 提交时的消息
+  commit_success              string          # 提交是否成功。1表示成功，0表示失败。如果失败，message里就是失败原因。一般失败都是空提交，revision则是上次revision。默认0
+}
+Partitions {
+  pt                          string          
+}
+"
+65,66,ocean_sys_meta,801504,,pt='20210606',5,3168,"odps.Schema {
+  id                      bigint          # PK
+  gmt_create              datetime        # *
+  gmt_modified            datetime        # *
+  meta_type               string          # 类型
+  name                    string          # 配置名
+  display_name            string          # 展现配置名名称
+  description             string          # 描述
+  status                  string          # 状态
+  data1                   string          # 数据
+  data2                   string          # 数据
+  data3                   string          # 数据
+  data4                   string          # 数据
+  creator_id              string          # creator_id
+  editor                  string          # editor
+}
+Partitions {
+  pt                      string          
+}
+"
+66,67,open_app,0,,pt='20210606',0,0,"odps.Schema {
+  id                                      bigint          # PK
+  name                                    string          # 应用名称
+  description                             string          # *
+  owner_id                                string          # 由哪个用户创建
+  acl_group                               string          # 权限组，NULL表示默认权限，如果app属于多个权限组则用,分隔
+  signature                               string          # 数字签名串，为一随机字符串
+  status                                  bigint          # *
+  reason                                  string          # 申请原因
+  activation_time                         datetime        # 激活时间
+  maturity_time                           datetime        # 到期时间
+  gmt_modified                            datetime        # *
+  gmt_create                              datetime        # *
+  key_                                    bigint          # key
+  ip                                      string          # ip来源检测
+  trust_level                             bigint          # 信任级别
+  data_permit_level                       bigint          # 数据权限
+  privacy_permit_level                    bigint          # 隐私权限
+  frequency_limit                         bigint          # 访问频率限制
+  homepage                                string          # isv app首页地址
+  domain                                  string          # isv app的域
+  callbacks                               string          # 回调地址
+  more_info                               string          # 扩展字段
+  logo_url                                string          # logo
+  resource_scopes                         string          # *
+  app_type                                string          # *
+  binding_users                           string          # *
+  data_odps                               string          # *
+  creator                                 string          # 申请者
+}
+Partitions {
+  pt                                      string          
+}
+"
+67,68,open_app_owner,0,,pt='20210606',0,0,"odps.Schema {
+  id                      bigint          # PK
+  password                string          # 密码
+  name                    string          # 姓名
+  email                   string          # 邮箱
+  type                    bigint          # 用户类型: 0 普通用户 1 合作伙伴 2 大型合作伙伴 3 阿里集团用户 4 阿里巴巴用户
+  role                    string          # 角色，多个角色用"",""隔开
+  status                  bigint          # 状态，包括： 0: 申请，未开始审批 1: 待审批 2: 正在审批 3: 审批不通过 4: 审批通过，可用 5: 停用
+  reason                  string          # 申请原因
+  gmt_modified            datetime        # *
+  gmt_create              datetime        # *
+  login_name              string          # *
+  company                 string          # 公司名
+  homepage                string          # 首页
+  is_site_user            string          # 站点
+  creator                 string          # 申请者信息
+}
+Partitions {
+  pt                      string          
+}
+"
